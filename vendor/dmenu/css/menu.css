@@ -49,7 +49,7 @@
     width: 0;
     position: absolute;
     pointer-events: none;
-    border-bottom-color: #ff6a39;
+    border-bottom-color: #ffc163;
     border-width: 7px;
     margin-left: -7px;
   }
@@ -62,7 +62,7 @@
     font-weight: 500;
   }
   .main-menu>ul>li span:hover>a {
-    color: #ff6a39;
+    color: #ffc163;
   }
   /* Submenu */
   .main-menu ul ul {
@@ -90,7 +90,7 @@
     -webkit-transition: all 0.2s ease;
     -ms-transition: all 0.2s ease;
     transition: all 0.2s ease;
-    border-top: 2px solid #ff6a39;
+    border-top: 2px solid #ffc163;
   }
   .main-menu ul ul li {
     display: block;
@@ -120,7 +120,7 @@
   }
   .main-menu ul ul li:hover>a {
     background-color: #f9f9f9;
-    color: #ff6a39;
+    color: #ffc163;
     padding-left: 15px;
     -moz-transition: all 0.2s ease;
     -o-transition: all 0.2s ease;
@@ -138,7 +138,7 @@
 
 .main-menu ul ul li span>a:hover {
   background-color: #f9f9f9;
-  color: #ff6a39;
+  color: #ffc163;
   padding-left: 18px;
   opacity: 1;
 }
@@ -165,7 +165,7 @@
   min-width: 190px;
   -webkit-box-shadow: 0 6px 12px rgba(0, 0, 0, 0.175);
   box-shadow: 0 6px 12px rgba(0, 0, 0, 0.175);
-  border-top: 2px solid #ff6a39;
+  border-top: 2px solid #ffc163;
 }
 
 .main-menu ul ul ul.third_level_left {
