@@ -187,7 +187,7 @@
 			enable: true,
 			enhance: true
 		},
-		navbar: {
+		navbar: { 
 			title: 'MENU'
 		},
 		navbars: [{
