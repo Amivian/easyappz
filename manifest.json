@@ -1,0 +1,21 @@
+{
+    "name": "EasyAppz",
+    "short_name": "FoodApp", 
+    "start_url": ".",
+    "theme_color": "#ff6a39",
+    "background_color": "#ffffff",
+    "display": "standalone",
+    "icons":[
+      {
+        "src":"img/logo192.png",
+        "sizes": "192x192",
+        "type": "image/png"
+      },
+      {
+        "src":"img/logo512.png",
+        "sizes": "512x512",
+        "type": "image/png"
+      }
+    ]
+  
+  }
