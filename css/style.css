@@ -2909,6 +2909,9 @@ label.cbx {
 ==================================== */
 
 @media (max-width: 575px) {
+	#logo h1 a {
+		background-size: 120px 30px;
+	}
 	.hero-home .content h1 {
 		font-size: 48px;
 	}
