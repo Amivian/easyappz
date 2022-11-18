@@ -192,7 +192,7 @@
 		},
 		navbars: [{
 			position: 'bottom',
-			content: ['<div id="copy"> &copy;<script>document.write(new Date().getFullYear());</script> EasyAppz</div>']
+			content: ['<div id="copy"> &copy;'+ <script>document.write(new Date().getFullYear());</script>+ 'EasyAppz</div>']
 		}]
 	}, {
 		// configuration
