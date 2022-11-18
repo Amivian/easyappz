@@ -192,7 +192,7 @@
 		},
 		navbars: [{
 			position: 'bottom',
-			content: ['<a href="#">© 2021 EasyAppz </a>']
+			content: ['<div id="copy"> &copy;<script>document.write(new Date().getFullYear());</script> EasyAppz</div>']
 		}]
 	}, {
 		// configuration
@@ -443,7 +443,7 @@
 		$('#itemList').append('<li id="emptyCart"></li>');
 
 		// Fill the dedicated row
-		$('#emptyCart').html('<div class="order-list-img"><img src="../img/bg/empty-cart-small.jpg" alt="Your cart is empty"/></div><div class="order-list-details"> <h4>Your cart is empty</a><br/><small>Start adding items</small></h4> <div class="order-list-price format-price">0.00</div></div>');
+		$('#emptyCart').html('<div class="order-list-img"><img src="img/bg/empty-cart-small.jpg" alt="Your cart is empty"/></div><div class="order-list-details"> <h4>Your cart is empty</a><br/><small>Start adding items</small></h4> <div class="order-list-price format-price">0.00</div></div>');
 		formatPrice();
 	}
 
@@ -652,7 +652,7 @@
 		extraTitle = $('#item' + id + 'ExtraTitle').val();
 		extraPrice = ($('#item' + id + 'Extra').val()) * 1; // Find digits, dot and convert to number
 
-		thumbnailPath = '../img/gallery/grid-items-small/' + id + '.jpg';
+		thumbnailPath = 'img/gallery/grid-items-small/' + id + '.jpg';
 
 		// Capture row where the item will be inserted
 		if (size == 'Small: 26cm') {
@@ -778,7 +778,7 @@
 		itemPrice = $('#gridItem' + id + ' .item-price').text();
 		itemPrice = (itemPrice.match(/[0-9.]+/g)) * 1; // Find digits, dot and convert to number
 
-		thumbnailPath = '../img/gallery/grid-items-small/' + id + '.jpg';
+		thumbnailPath = 'img/gallery/grid-items-small/' + id + '.jpg';
 
 		// Check if item already exists in cart or not
 		if ($('#cartItem' + id + rowId).length > 0) {
@@ -844,5 +844,6 @@
 
 	setEmptyCart();
 	resetTotal();
+	
 
 })(window.jQuery);
