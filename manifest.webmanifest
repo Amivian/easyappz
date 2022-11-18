@@ -3,6 +3,7 @@
     "short_name": "Easyappz", 
     "description": "Food ordering app",
     "start_url": "/easyappz/",
+    "scope":  "/easyappz/",
     "theme_color": "#ff6a39",
     "background_color": "#ffffff",
     "display": "standalone",
