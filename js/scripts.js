@@ -192,7 +192,7 @@
 		},
 		navbars: [{
 			position: 'bottom',
-			content: ['<a href="#">© 2021 FoodBoard</a>']
+			content: ['<a href="#">© 2021 EasyAppz</a>']
 		}]
 	}, {
 		// configuration
