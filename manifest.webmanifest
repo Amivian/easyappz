@@ -1,18 +1,20 @@
 {
     "name": "EasyAppz",
-    "short_name": "FoodApp", 
-    "start_url": ".",
+    "short_name": "Easyappz", 
+    "description": "Food ordering app",
+    "scope": "/easyappz/",
+    "start_url": "/easyappz/",
     "theme_color": "#ff6a39",
     "background_color": "#ffffff",
     "display": "standalone",
     "icons":[
       {
-        "src":"img/logo192.png",
+        "src":"/easyappz/img/logo192.png",
         "sizes": "192x192",
         "type": "image/png"
       },
       {
-        "src":"img/logo512.png",
+        "src":"/easyappz/img/logo512.png",
         "sizes": "512x512",
         "type": "image/png"
       }
