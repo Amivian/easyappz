@@ -61,37 +61,37 @@ var URLS = [
   `${GHPATH}/vendor/theia-sticky-sidebar/js/theia-sticky-sidebar.min.js`,
 ]
 
-const cacheName = "pwa-conf-v1";
+// const cacheName = "pwa-conf-v1";
 
-self.addEventListener("install", async (event) => {
-  const cache = await caches.open(cacheName);
-  await cache.addAll(staticAssets);
-});
-self.addEventListener("fetch", (event) => {
-  const req = event.request;
-  event.respondWith(cacheFirst(req));
-});
+// self.addEventListener("install", async (event) => {
+//   const cache = await caches.open(cacheName);
+//   await cache.addAll(staticAssets);
+// });
+// self.addEventListener("fetch", (event) => {
+//   const req = event.request;
+//   event.respondWith(cacheFirst(req));
+// });
 
-async function cacheFirst(req) {
-  const cache = await caches.open(cacheName);
-  const cachedResponse = await cache.match(req);
-  return cachedResponse || fetch(req);
-}
+// async function cacheFirst(req) {
+//   const cache = await caches.open(cacheName);
+//   const cachedResponse = await cache.match(req);
+//   return cachedResponse || fetch(req);
+// }
 
-// // Cached core static resources 
-// self.addEventListener("install",e=>{
-//     e.waitUntil(
-//       caches.open("static").then(cache=>{
-//         return cache.addAll(["./",'./img/logo192.png']);
-//       })
-//     );
-//   });
+// Cached core static resources 
+self.addEventListener("install",e=>{
+    e.waitUntil(
+      caches.open("static").then(cache=>{
+        return cache.addAll(["./",'./img/logo192.png']);
+      })
+    );
+  });
   
-//   // Fatch resources
-//   self.addEventListener("fetch",e=>{
-//     e.respondWith(
-//       caches.match(e.request).then(response=>{
-//         return response||fetch(e.request);
-//       })
-//     );
-//   });
+  // Fatch resources
+  self.addEventListener("fetch",e=>{
+    e.respondWith(
+      caches.match(e.request).then(response=>{
+        return response||fetch(e.request);
+      })
+    );
+  });
