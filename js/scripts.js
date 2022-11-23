@@ -106,7 +106,7 @@
 
 		// Reset validation and remove error notifications from the form
 		beforeBackward: function (event, state) {
-			$('#orderForm').parsley().reset();
+			$('#paymentForm').parsley().reset();
 			$('ul.parsley-errors-list').not(':has(li)').remove();
 		}
 	});
@@ -299,7 +299,7 @@
 	// =====================================================
 	// FORM LABELS
 	// =====================================================
-	new FloatLabels('#orderForm', {
+	new FloatLabels('#paymentForm', {
 		style: 1
 	});
 
@@ -325,8 +325,8 @@
 	});
 
 	// Clear parsley empty elements
-	if ($('#orderForm').length > 0) {
-		$('#orderForm').parsley().on('field:success', function () {
+	if ($('#paymentForm').length > 0) {
+		$('#paymentForm').parsley().on('field:success', function () {
 			$('ul.parsley-errors-list').not(':has(li)').remove();
 		});
 	}
