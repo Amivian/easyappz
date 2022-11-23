@@ -92,7 +92,7 @@
 
 	$('#sidebar').wizard({
 		stepsWrapper: '#orderContainer',
-		submit: '.submit',
+		// submit: '.submit',/
 
 		// Prevent moving forward if total is zero
 		beforeForward: function (event, state) {
