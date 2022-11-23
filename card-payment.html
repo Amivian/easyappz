@@ -448,7 +448,7 @@
                             <!-- Order Container -->
                             <div id="orderContainer" class="theiaStickySidebar">
                                 <!-- Form -->
-                                <form method="POST" id="orderForm" name="orderForm" onsubmit="return confirmGuestOrder(event);">
+                                <form method="POST" id="orderForm"  name="orderForm">
 
                                     <!-- Step 1: Order Summary -->
                                     <div id="#orderSummaryStep" class="step">
@@ -505,7 +505,7 @@
                                         <div class="order-header">
                                             <h3>Order Summary 2/2</h3>
                                         </div>
-                                        <form id="paymentForm" id="personalData" data-currency='NGN'>
+                                        <div id="personalData" data-currency='NGN'>
                                             <div class="order-body">
                                                 <div class="row">
                                                     <div class="col-md-6">
@@ -601,7 +601,7 @@
                                                     </div>
                                                 </div>
                                             </div>
-                                        </form>
+                                        </div>
                                     </div>
                                     <!-- Step 2: Checkout End -->
 

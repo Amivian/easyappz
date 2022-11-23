@@ -1,4 +1,4 @@
-var paymentForm = document.getElementById('paymentForm');
+var paymentForm = document.getElementById('orderForm');
 paymentForm.addEventListener('submit', payWithPaystack, false);
 function payWithPaystack() {
   e.preventDefault();
