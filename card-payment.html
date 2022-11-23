@@ -505,29 +505,35 @@
                                         <div class="order-header">
                                             <h3>Order Summary 2/2</h3>
                                         </div>
-                                        <div id="personalData" data-currency='NGN'>
+                                        <form id="paymentForm" id="personalData" data-currency='NGN'>
                                             <div class="order-body">
                                                 <div class="row">
-                                                    <div class="col-md-12">
+                                                    <div class="col-md-6">
                                                         <div class="form-group">
-                                                            <label for="userNameOnlinePayment">Full Name</label>
-                                                            <input id="userNameOnlinePayment" class="form-control" name="username" type="text" data-parsley-pattern="^[a-zA-Z\s.]+$" required />
+                                                            <label for="first-name">First Name</label>
+                                                            <input id="first-name" class="form-control" name="username" type="text" data-parsley-pattern="^[a-zA-Z\s.]+$" required />
+                                                        </div>
+                                                    </div>  
+                                                    <div class="col-md-6">
+                                                        <div class="form-group">
+                                                            <label for="last-name">Last Name</label>
+                                                            <input id="last-name" class="form-control" name="username" type="text" data-parsley-pattern="^[a-zA-Z\s.]+$" required />
                                                         </div>
                                                     </div>
                                                 </div>
                                                 <div class="row">
                                                     <div class="col-md-12">
                                                         <div class="form-group">
-                                                            <label for="phoneOnlinePayment">Phone +12345</label>
-                                                            <input id="phoneOnlinePayment" class="form-control" name="phone" type="text" data-parsley-pattern="^\+{1}[0-9]+$" required />
+                                                            <label for="phone">Phone +2345</label>
+                                                            <input id="phone" class="form-control" name="phone" type="number" data-parsley-pattern="^\+{1}[0-9]+$" required />
                                                         </div>
                                                     </div>
                                                 </div>
                                                 <div class="row">
                                                     <div class="col-md-12">
                                                         <div class="form-group">
-                                                            <label for="emailOnlinePayment">Email</label>
-                                                            <input id="emailOnlinePayment" class="form-control" name="email" type="email" required />
+                                                            <label for="email-address">Email</label>
+                                                            <input id="email-address" class="form-control" name="email-address" type="email" required />
                                                         </div>
                                                     </div>
                                                 </div>
@@ -549,7 +555,7 @@
                                                 </div>
                                                 <div class="row total-container">
                                                     <div class="col-md-12 p-0">
-                                                        <span class="totalTitle">Total</span><span class="totalValue format-price float-right">0.00</span>
+                                                        <span class="totalTitle">Total</span><span class="totalValue format-price float-right" id="amount">0.00</span>
                                                     </div>
                                                 </div>
                                                 <div class="row">
@@ -572,7 +578,7 @@
                                                 </div>
                                                 <div class="row">
                                                     <div class="col-md-12">
-                                                        <button type="submit" name="submit" id="submitPayment" class="btn-form-func">
+                                                        <button type="submit" name="submit" id="submitPayment" class="btn-form-func"onclick="payWithPaystack()">
                                                             <span class="btn-form-func-content">Submit</span>
                                                             <span class="icon"><i class="fa fa-check" aria-hidden="true"></i></span>
                                                         </button>
@@ -595,7 +601,7 @@
                                                     </div>
                                                 </div>
                                             </div>
-                                        </div>
+                                        </form>
                                     </div>
                                     <!-- Step 2: Checkout End -->
 
@@ -1233,12 +1239,10 @@
 	<script src="/easyappz/vendor/isotope/js/isotope.pkgd.min.js"></script>
 	<script src="/easyappz/vendor/scrollreveal/js/scrollreveal.min.js"></script>
 	<script src="/easyappz/vendor/lazyload/js/lazyload.min.js"></script>
-	<script src="/easyappz/vendor/sticky-kit/js/sticky-kit.min.js"></script>    
+	<script src="/easyappz/vendor/sticky-kit/js/sticky-kit.min.js"></script> 
+    <script src="https://js.paystack.co/v1/inline.js"></script>     
 	<script src="/easyappz/js/scripts.js"></script>
-
-	<!-- Main Javascript File -->
-	<!-- <script src="js/scripts.js"></script>
-	<script src="js/index.js"></script> -->
+	<script src="/easyappz/js/index.js"></script>
 		<script>
 			if (navigator.serviceWorker) {
 			  navigator.serviceWorker.register (
