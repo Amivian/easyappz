@@ -449,7 +449,7 @@
 							<div id="orderContainer" class="theiaStickySidebar">
 
 								<!-- Form -->
-								<form method="POST" id="orderForm" name="orderForm">
+								<form method="POST" id="paymentForm" name="orderForm">
 
 									<!-- Step 1: Order Summary -->
 									<div id="#orderSummaryStep" class="step">
@@ -558,7 +558,7 @@
 												<div class="row total-container">
 													<div class="col-md-12 p-0">
 														<span class="totalTitle">Total</span>
-                                                        <span class="totalValue format-price float-right" id="amount">0.00</span>
+                                                        <input class="totalValue format-price float-right" id="amount">
 													</div>
 												</div>
 												<div class="row">
@@ -1243,7 +1243,7 @@
     <script src="https://js.paystack.co/v1/inline.js"></script>     
 	<script src="/easyappz/js/scripts.js"></script>
 	<script>
-        var paymentForm = document.getElementById('orderForm');
+        var paymentForm = document.getElementById('paymentForm');
         paymentForm.addEventListener('submit', payWithPaystack, false);
         function payWithPaystack() {        
             // event.preventDefault();
