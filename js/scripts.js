@@ -481,13 +481,13 @@
 
 		// Set total
 		$('.total').val(total.toFixed(2));
-		$('.totalValue').text(total.toFixed(2));
+		$('.totalValue').value(total.toFixed(2));
 
 		// If cart is empty do not calculate any cost
 		if ($('ul#itemList li#emptyCart').length > 0) {
 			total = 0;
 			$('.total').val(total.toFixed(2));
-			$('.totalValue').text(total.toFixed(2));
+			$('.totalValue').value(total.toFixed(2));
 		}
 
 		formatPrice();
