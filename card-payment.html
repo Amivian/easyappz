@@ -526,24 +526,24 @@
 												<div class="row">
 													<div class="col-md-12">
 														<div class="form-group">
-															<label for="phoneCashPayment">Phone +12345</label>
-															<input id="phoneCashPayment" class="form-control" name="phone" type="text" data-parsley-pattern="^\+{1}[0-9]+$" required />
+															<label for="phone">Phone +12345</label>
+															<input id="phone" class="form-control" name="phone" type="text" data-parsley-pattern="^\+{1}[0-9]+$" required />
 														</div>
 													</div>
 												</div>
 												<div class="row">
 													<div class="col-md-12">
 														<div class="form-group">
-															<label for="emailCashPayment">Email</label>
-															<input id="emailCashPayment" class="form-control" name="email-address" type="email" required />
+															<label for="email-address">Email</label>
+															<input id="email-address" class="form-control" name="email-address" type="email" required />
 														</div>
 													</div>
 												</div>
 												<div class="row">
 													<div class="col-md-12 col-sm-6">
 														<div class="form-group">
-															<label for="addressCashPayment">Delivery Address</label>
-															<input id="addressCashPayment" class="form-control" name="address" type="text" data-parsley-pattern="^[,.a-zA-Z0-9\s.]+$" required />
+															<label for="address">Delivery Address</label>
+															<input id="address" class="form-control" name="address" type="text" data-parsley-pattern="^[,.a-zA-Z0-9\s.]+$" required />
 														</div>
 													</div>
 												</div>
@@ -557,7 +557,7 @@
 												</div>
 												<div class="row total-container">
 													<div class="col-md-12 p-0">
-														<span class="totalTitle">Total</span><span class="totalValue format-price float-right">0.00</span>
+														<span class="totalTitle">Total</span><span class="totalValue format-price float-right" id="amount">0.00</span>
 													</div>
 												</div>
 												<div class="row">
@@ -581,7 +581,7 @@
 												<div class="row">
 													<div class="col-md-12">
 														<button type="submit" name="submit" id="submitOrder" class="btn-form-func">
-															<span class="btn-form-func-content">Submit</span>
+															<span class="btn-form-func-content" onclick="payWithPaystack()">Submit</span>
 															<span class="icon"><i class="fa fa-check" aria-hidden="true"></i></span>
 														</button>
 													</div>
