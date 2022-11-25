@@ -313,6 +313,14 @@
 			event.preventDefault();
 		}
 	});
+	window.Parsley.addValidator('emptyOrder', {
+		validateString: function (value) {
+			return value !== '$ 0.00';
+		},
+		messages: {
+			en: 'Order is empty.'
+		}
+	});
 
 	// Add custom empty order validation
 	window.Parsley.addValidator('emptyOrder', {
@@ -481,13 +489,13 @@
 
 		// Set total
 		$('.total').val(total.toFixed(2));
-		$('.totalValue').value(total.toFixed(2));
+		$('.totalValue').text(total.toFixed(2));
 
 		// If cart is empty do not calculate any cost
 		if ($('ul#itemList li#emptyCart').length > 0) {
 			total = 0;
 			$('.total').val(total.toFixed(2));
-			$('.totalValue').value(total.toFixed(2));
+			$('.totalValue').text(total.toFixed(2));
 		}
 
 		formatPrice();

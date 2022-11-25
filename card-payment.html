@@ -480,13 +480,13 @@
 											</div>
 											<!-- Delivery Fee -->
 											<!-- Total -->
-											<div class="row total-container">
-												<div class="col-md-12 p-0">
-													<span class="totalTitle">Total</span><span class="totalValue format-price float-right">0.00</span>
-													<input type="hidden" id="totalOrderSummary" class="total format-price" name="total" value="" data-parsley-errors-container="#totalError" data-parsley-empty-order="" disabled />
-												</div>
-											</div>
-											<div id="totalError"></div>
+                                            <div class="row total-container">
+                                                <div class="col-md-12 p-0">
+                                                    <span class="totalTitle">Total</span><span class="totalValue format-price float-right">0.00</span>
+                                                    <input type="hidden" id="totalOrderSummary" class="total format-price" name="total" value="" data-parsley-errors-container="#totalError" data-parsley-empty-order="" disabled />
+                                                </div>
+                                            </div>
+                                            <div id="totalError"></div>
 											<!-- Total End -->
 											<!-- Forward Button -->
 											<div class="row">
@@ -558,7 +558,7 @@
 												<div class="row total-container">
 													<div class="col-md-12 p-0">
 														<span class="totalTitle">Total</span>
-                                                        <input class="totalValue format-price float-right" type="tel" id="amount" readonly value="0.00"/>
+                                                        <span class="totalValue format-price float-right" id="amount">0.00</span>
 													</div>
 												</div>
 												<div class="row">
@@ -1250,7 +1250,7 @@
         var handler = PaystackPop.setup({
             key: 'pk_live_72b6f671a4f806a06600572b1a4c95506bb0d87d', // Replace with your public key
             email: document.getElementById('email-address').value,
-            amount: document.getElementById('amount').value*100, // the amount value is multiplied by 100 to convert to the lowest currency unit
+            amount: document.getElementById('amount').text*100, // the amount value is multiplied by 100 to convert to the lowest currency unit
             currency: 'NGN', // Use GHS for Ghana Cedis or USD for US Dollars
             ref: 'YOUR_REFERENCE', // Replace with a reference you generated
             callback: function(response) {
