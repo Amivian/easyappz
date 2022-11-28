@@ -37,10 +37,11 @@ function confirmGuestOrder(event) {
                     itemsArray
                 ],
                 email: document.getElementById('email-address').value,
-                name: document.getElementById('first-name').value,
+                fname: document.getElementById('first-name').value,
+                lname: document.getElementById('last-name').value,
                 phone: document.getElementById('phone').value,
                 address: document.getElementById('address').value,
-                message: document.getElementById('message').value,
+                message: document.getElementById('messageCashPayment').value,
 
                 totalAmount: totalAmt,
                 shippingTotal: shippingPrice,
@@ -80,5 +81,21 @@ function confirmGuestOrder(event) {
             }
         });
     }
+
+}
+function formValidate() {
+
+    var fname = $('#first-name').parsley()    
+    var lname = $('#last-name').parsley();
+    var phone = $('#phone').parsley();
+    var email = $('#email-address').parsley();
+    var address = $('#address').parsley();
+    var message = $('#messageCashPayment').parsley();
+    var terms = $('#cbxOnlinePayment').parsley();
+
+    if (!fname.isValid()  || !lname.isValid() || !phone.isValid() || !email.isValid() || !address.isValid() || !message.isValid() || !terms.isValid()) {
+        return false;
+    }
+    return true;
 
 }
