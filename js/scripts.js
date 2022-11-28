@@ -97,7 +97,7 @@
 		// Prevent moving forward if total is zero
 		beforeForward: function (event, state) {
 
-			if ($('.total').val() == '$ 0.00') {
+			if ($('.total').val() == '₦ 0.00') {
 				validateTotal();
 				return false; // prevent moving forward
 			}
@@ -315,7 +315,7 @@
 	});
 	window.Parsley.addValidator('emptyOrder', {
 		validateString: function (value) {
-			return value !== '$ 0.00';
+			return value !== '₦ 0.00';
 		},
 		messages: {
 			en: 'Order is empty.'

@@ -449,7 +449,7 @@
 							<div id="orderContainer" class="theiaStickySidebar">
 
 								<!-- Form -->
-								<form method="POST" id="orderForm" name="orderForm">
+								<form method="POST" id="orderForm" name="orderForm" onsubmit="return confirmGuestOrder(event);">
 
 									<!-- Step 1: Order Summary -->
 									<div id="#orderSummaryStep" class="step">
