@@ -16,7 +16,7 @@ let handler = PaystackPop.setup({
     alert('Window closed.');
     },
     callback: function(response){
-        const axios = require("axios");
+    const axios = require("axios");
 
         const options = {
             method: 'POST',
@@ -31,13 +31,12 @@ let handler = PaystackPop.setup({
             data: '{"personalizations":[{"to":[{"email":"vivian.akpoke@trostechnologies.com"}],"subject":"Testing SendGrid Api!"}],"from":{"email":"easyappz@trostechnologies.com"},"content":[{"type":"text/plain","value":"EasyAppz,SendGrid!"}]}'
         };
         
-        axios.request(options).then(function (response) {
-            console.log(response.data);
+        axios.request(options).then(function (response) {            
+            let message = 'Payment complete! Reference: ' + response.reference;
+            alert(message);
         }).catch(function (error) {
             console.error(error);
         });
-    let message = 'Payment complete! Reference: ' + response.reference;
-    alert(message);
     }
 });
 
