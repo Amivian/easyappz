@@ -15,8 +15,23 @@ let handler = PaystackPop.setup({
     alert('Window closed.');
     },
     callback: function(response){
-    let message = 'Payment complete! Reference: ' + response.reference;
-    alert(message);
+        $.ajax({
+            contentType: 'application/json',
+            url: '../email/send.js',
+            type: 'POST',
+            data: data,
+            dataType: 'json',
+            success: function (data) {
+                if (data != 'error') {
+                   let message = 'Payment complete! Reference: ' + response.reference;
+                   alert(message);
+                } else {
+                    console.log('Unable to send mail. Please try again.');
+                    $('#submitPayment').html('Submit');
+                    $('.spinner-icon').hide();
+                }
+            }
+        });
     }
 });
 
