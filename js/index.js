@@ -2,7 +2,7 @@ const paymentForm = document.getElementById('orderForm');
 paymentForm.addEventListener("submit", payWithPaystack, false);
 
 var fullName = document.getElementById("fullname").value;
-var email = document.getElemmentById("email-address").value;
+var email = document.getElementById("email-address").value;
 var phone = document.getElementById("phone").value;
 var address = document.getElementById("address").value;
 var message = document.getElementById("message").value;
