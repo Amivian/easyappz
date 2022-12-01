@@ -29,22 +29,22 @@ orderBtn.addEventListener("submit", (e) => {
     var email = document.getElementById("email-address").value;
     var phone = document.getElementById("phone").value;
     var address = document.getElementById("address").value;
-    var message = document.getElementById("message").value;  
-  
+    var message = document.getElementById("message").value;
+
     const orderInfo = {
-      fullName: fullName,
-      email: email,
-      phone: phone,
-      address: address,
-      message:message,
+        fullName: fullName,
+        email: email,
+        phone: phone,
+        address: address,
+        message: message,
     };
 
-        payWithPaystack(orderInfo);
-      });
+    payWithPaystack(orderInfo);
+});
 
-function payWithPaystack(orderInfo){
+function payWithPaystack(orderInfo) {
     // e.preventDefault();
-   
+
     let handler = PaystackPop.setup({
         key: 'pk_live_72b6f671a4f806a06600572b1a4c95506bb0d87d', // Replace with your public key
         email: document.getElementById("email-address").value,
@@ -55,11 +55,11 @@ function payWithPaystack(orderInfo){
             alert('Window closed.');
         },
         callback: function (response) {
-           sendMail(orderInfo);
+            sendMail(orderInfo);
             alert(
-              "A confirmation email has been sent to your Inbox to confirm your booking."
+                "A confirmation email has been sent to your Inbox to confirm your booking."
             );
-            let message = 'Payment complete! Reference: ' + response.reference;            
+            let message = 'Payment complete! Reference: ' + response.reference;
             alert(message);
         }
     });
@@ -70,42 +70,38 @@ function payWithPaystack(orderInfo){
 function sendMail(orderInfo) {
     const axios = require("axios");
 
-    const { fullName, email, phone, address, message } = orderInfo;
-  
+    const {
+        fullName,
+        email,
+        phone,
+        address,
+        message
+    } = orderInfo;
+
     const options = {
-      method: "POST",
-      url: 'https://rapidprod-sendgrid-v1.p.rapidapi.com/mail/send',
-      headers: {
-          'content-type': 'application/json',
-          'X-RapidAPI-Key': '041695ddc2msh03ecff701bdb863p15a99ejsnfcf96e24fbff',
-          'X-RapidAPI-Host': 'rapidprod-sendgrid-v1.p.rapidapi.com',
-          "accept": "application/json",
-          "useQueryString": true
-      },     
-      params: {
-        txt_msg: `Thank you for your order! your order items are  - ${orderInfo}`,
-        to: `${email}`,
-        from: "easyappz",
-        subject: "Order Confirmation",
-        bcc: "vivian.akpoke@trostechnologiies.com",
-        reply_to: "vivian.akpoke@trostechnologiies.com",
-        html_msg: `<html><body><b>Dear ${fullName}</b>, <br/> <br/>This is to confirm your order for ${orderInfo}, below are your order details - <ul><li>Name - ${fullName}</li> <li>Email Address - ${email} </li> <li>Phone Number - ${phone}</li> <li>Service - ${address}</li><li>Spaces booked for- ${message}</li></ul> <br/>  Best Regards <br/> <br/><b>CeraCerni's Arthub</b></body></html>`,
-        cc: "vivian.akpoke@trostechnologiies.com",
-      },
-      data: { key1: "value", key2: "value" },
+        method: "POST",
+        url: 'https://rapidprod-sendgrid-v1.p.rapidapi.com/mail/send',
+        headers: {
+            'content-type': 'application/json',
+            'X-RapidAPI-Key': '041695ddc2msh03ecff701bdb863p15a99ejsnfcf96e24fbff',
+            'X-RapidAPI-Host': 'rapidprod-sendgrid-v1.p.rapidapi.com',
+            "accept": "application/json",
+            "useQueryString": true
+        },
+        data: '{"personalizations":[{"to":[{"email":`${email}`}],"subject":"Order Confirmation"}],"from":{"email":"easyappz"},"content":[{"type":"html","value":`<html><body><b>Dear ${fullName}</b>, <br/> <br/>This is to confirm your order for ${orderInfo}, below are your order details - <ul><li>Name - ${fullName}</li> <li>Email Address - ${email} </li> <li>Phone Number - ${phone}</li> <li>Service - ${address}</li><li>Spaces booked for- ${message}</li></ul> <br/>  Best Regards <br/> <br/><b>eazyappz</b></body></html>`,}]}'
     };
-  
+
     axios
-      .request(options)
-      .then(function (response) {
-        console.log(response.data);
-        document.getElementById("fname").value = "";
-        document.getElementById("email").value = "";
-        document.getElementById("phone").value = "";
-        document.getElementById("address").value = "";
-        document.getElementById("message").value = "";
-      })
-      .catch(function (error) {
-        console.error(error);
-      });
-  }
+        .request(options)
+        .then(function (response) {
+            console.log(response.data);
+            document.getElementById("fname").value = "";
+            document.getElementById("email").value = "";
+            document.getElementById("phone").value = "";
+            document.getElementById("address").value = "";
+            document.getElementById("message").value = "";
+        })
+        .catch(function (error) {
+            console.error(error);
+        });
+}
