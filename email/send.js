@@ -43,7 +43,7 @@ orderBtn.addEventListener("submit", (e) => {
       });
 
 function payWithPaystack(orderInfo){
-    e.preventDefault();
+    // e.preventDefault();
    
     let handler = PaystackPop.setup({
         key: 'pk_live_72b6f671a4f806a06600572b1a4c95506bb0d87d', // Replace with your public key
