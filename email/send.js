@@ -21,7 +21,8 @@
 
 // const paymentForm = document.getElementById('orderForm');
 // paymentForm.addEventListener("submit", payWithPaystack, false);
-bookBtn.addEventListener("submit", (e) => {
+orderBtn = document.getElementById('orderForm');
+orderBtn.addEventListener("submit", (e) => {
     e.preventDefault();
 
     var fullName = document.getElementById("fullname").value;
