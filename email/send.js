@@ -19,22 +19,27 @@
 //     console.error(error);
 // });
 
-const paymentForm = document.getElementById('orderForm');
-paymentForm.addEventListener("submit", payWithPaystack, false);
+// const paymentForm = document.getElementById('orderForm');
+// paymentForm.addEventListener("submit", payWithPaystack, false);
+bookBtn.addEventListener("submit", (e) => {
+    e.preventDefault();
 
-var fullName = document.getElementById("fullname").value;
-var email = document.getElementById("email-address").value;
-var phone = document.getElementById("phone").value;
-var address = document.getElementById("address").value;
-var message = document.getElementById("message").value;
+    var fullName = document.getElementById("fullname").value;
+    var email = document.getElementById("email-address").value;
+    var phone = document.getElementById("phone").value;
+    var address = document.getElementById("address").value;
+    var message = document.getElementById("message").value;  
+  
+    const orderInfo = {
+      fullName: fullName,
+      email: email,
+      phone: phone,
+      address: address,
+      message:message,
+    };
 
-let orderInfo = {
-    fullName: fullName,
-    email: email,
-    phone: phone,
-    address: address,
-    message: message,
-  };
+        payWithPaystack(orderInfo);
+      });
 
 function payWithPaystack(orderInfo){
     e.preventDefault();
