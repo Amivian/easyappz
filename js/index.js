@@ -3,8 +3,8 @@ paymentForm.addEventListener("submit", payWithPaystack, false);
 
 
 
-function payWithPaystack(orderInfo){
-    // e.preventDefault();
+function payWithPaystack(e, orderInfo){
+    e.preventDefault();
     var fullName = document.getElementById("fullname").value;
     var email = document.getElemmentById("email-address").value;
     var phone = document.getElementById("phone").value;
