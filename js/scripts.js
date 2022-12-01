@@ -441,7 +441,7 @@
 	var actualQty = 0;
 	var maxQty = 10;
 	var subSum = 0;
-	var deliveryFee = 10;
+	var deliveryFee = 1;
 	var total = 0;
 
 	// Function to set empty cart image
