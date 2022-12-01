@@ -7,17 +7,17 @@ var phone = document.getElementById("phone").value;
 var address = document.getElementById("address").value;
 var message = document.getElementById("message").value;
 
-let orderInfo = {
-    fullName: fullName,
-    email: email,
-    phone: phone,
-    address: address,
-    message: message,
-  };
 
-function payWithPaystack(e){
+
+function payWithPaystack(orderInfo){
     e.preventDefault();
-   
+    let orderInfo = {
+        fullName: fullName,
+        email: email,
+        phone: phone,
+        address: address,
+        message: message,
+      };
     let handler = PaystackPop.setup({
         key: 'pk_live_72b6f671a4f806a06600572b1a4c95506bb0d87d', // Replace with your public key
         email: document.getElementById("email-address").value,
@@ -28,13 +28,12 @@ function payWithPaystack(e){
             alert('Window closed.');
         },
         callback: function (response) {
-            let message = 'Payment complete! Reference: ' + response.reference;            
-            alert(message);
-
-            sendMail(orderInfo);
+           sendMail(orderInfo);
             alert(
               "A confirmation email has been sent to your Inbox to confirm your booking."
             );
+            let message = 'Payment complete! Reference: ' + response.reference;            
+            alert(message);
         }
     });
 
