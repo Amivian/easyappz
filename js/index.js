@@ -1,31 +1,29 @@
 const paymentForm = document.getElementById('orderForm');
 paymentForm.addEventListener("submit", payWithPaystack, false);
 
+var fullName = document.getElementById("fullname").value;
+var email = document.getElemmentById("email-address").value;
+var phone = document.getElementById("phone").value;
+var address = document.getElementById("address").value;
+var message = document.getElementById("message").value;
 
+let orderInfo = {
+    fullName: fullName,
+    email: email,
+    phone: phone,
+    address: address,
+    message: message,
+  };
 
-function payWithPaystack(e, orderInfo){
+function payWithPaystack(e){
     e.preventDefault();
-    var fullName = document.getElementById("fullname").value;
-    var email = document.getElemmentById("email-address").value;
-    var phone = document.getElementById("phone").value;
-    var address = document.getElementById("address").value;
-    var message = document.getElementById("message").value;
-    
-    let orderInfo = {
-        fullName: fullName,
-        email: email,
-        phone: phone,
-        address: address,
-        message: message,
-      };
+   
     let handler = PaystackPop.setup({
         key: 'pk_live_72b6f671a4f806a06600572b1a4c95506bb0d87d', // Replace with your public key
         email: document.getElementById("email-address").value,
         name: document.getElementById("fullname").value,
         amount: parseInt(document.getElementById("amount").innerHTML) * 100,
         currency: 'NGN',
-        // ref: ''+Math.floor((Math.random() * 1000000000) + 1), // generates a pseudo-unique reference. Please replace with a reference you generated. Or remove the line entirely so our API will generate one for you
-        // label: "Optional string that replaces customer email"
         onClose: function () {
             alert('Window closed.');
         },
@@ -45,20 +43,8 @@ function payWithPaystack(e, orderInfo){
 
 function sendMail(orderInfo) {
     const axios = require("axios");
-  
-    var fullName = document.getElementById("fullname").value;
-    var email = document.getElemmentById("email-address").value;
-    var phone = document.getElementById("phone").value;
-    var address = document.getElementById("address").value;
-    var message = document.getElementById("message").value;
-    
-    let orderInfo = {
-        fullName: fullName,
-        email: email,
-        phone: phone,
-        address: address,
-        message: message,
-      };
+
+    const { fullName, email, phone, address, message } = orderInfo;
   
     const options = {
       method: "POST",
