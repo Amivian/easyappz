@@ -1,5 +1,5 @@
 // Change this to your repository name
-var GHPATH = '/easyappz';
+var GHPATH = '/foodorderingapp';
  
 // Choose a different app prefix name
 var APP_PREFIX = 'eafoa_';
